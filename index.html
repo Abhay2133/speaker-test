@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speaker Test</title>
+    <style>
+        main{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        button {
+            --button-shadow-color: rgba(0,0,0,0.4);
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: 1px solid rgba(0,0,0,0.4);
+            border-radius: 12px;
+            box-shadow: 0 4px var(--button-shadow-color);
+        }
+
+        button:active {
+            box-shadow: 0 1px var(--button-shadow-color);
+            transform: translateY(3px);
+        }
+
+        h1 {
+            margin-bottom: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Speaker Test Page</h1>
+        <button id="play-sound">Play Sound</button>
+    </main>
+
+    <script>
+        document.getElementById('play-sound').addEventListener('click', function() {
+            var audio = new Audio('./click.mp3'); // Ensure you have a test-sound.mp3 file in the same directory
+            audio.play().catch(function(error) {
+                console.error('Error playing sound:', error);
+            });
+        });
+    </script>
+</body>
+</html>
