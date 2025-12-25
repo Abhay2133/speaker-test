@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Speaker Test</title>
     <style>
-        main{
+        main {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -15,11 +16,11 @@
         }
 
         button {
-            --button-shadow-color: rgba(0,0,0,0.4);
+            --button-shadow-color: rgba(0, 0, 0, 0.4);
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
-            border: 1px solid rgba(0,0,0,0.4);
+            border: 1px solid rgba(0, 0, 0, 0.4);
             border-radius: 12px;
             box-shadow: 0 4px var(--button-shadow-color);
         }
@@ -32,8 +33,17 @@
         h1 {
             margin-bottom: 3rem;
         }
+
+        input,
+        textarea,
+        button,
+        select,
+        a {
+            -webkit-tap-highlight-color: transparent;
+        }
     </style>
 </head>
+
 <body>
     <main>
         <h1>Speaker Test Page</h1>
@@ -41,12 +51,13 @@
     </main>
 
     <script>
-        document.getElementById('play-sound').addEventListener('click', function() {
+        document.getElementById('play-sound').addEventListener('click', function () {
             var audio = new Audio('./click.mp3'); // Ensure you have a test-sound.mp3 file in the same directory
-            audio.play().catch(function(error) {
+            audio.play().catch(function (error) {
                 console.error('Error playing sound:', error);
             });
         });
     </script>
 </body>
+
 </html>
